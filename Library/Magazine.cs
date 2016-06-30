@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    abstract class Media
+    class Magazine:Media
     {
-        public virtual string Title { get;  set; }
-        public virtual string Length { get;  set; }
-        public abstract int RentalLength { get; set; }
-        protected DateTime RentedDate { get;  set; }
-    
-        
-        public Media()
+        public override string Title { get; set; }
+        public override string Length { get; set; }
+        public override int RentalLength { get; set; }
+        protected DateTime RentedDate { get; set; }
+
+
+        public Magazine()
         {
             RentedDate = DateTime.Today;
+            
         }
-        
+
         public override void PrintMediaDetails();
 
         public override DateTime ReturnDueDate();
 
-        public virtual void  SetRentedDate()
+        public void SetRentedDate()
         {
             RentedDate = DateTime.Today;
         }
