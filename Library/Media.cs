@@ -19,9 +19,9 @@ namespace Library
             RentedDate = DateTime.Today;
         }
         
-        public override void PrintMediaDetails();
+        public abstract void PrintMediaDetails();
 
-        public override DateTime ReturnDueDate();
+        public abstract  DateTime ReturnDueDate();
 
         public virtual void  SetRentedDate()
         {

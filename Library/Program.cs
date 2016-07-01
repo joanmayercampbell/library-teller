@@ -19,7 +19,8 @@ namespace Library
 
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
             //implement
-            List<string> mediaToRent = new List<string>();
+     
+            List<string> mediaToRent =  getFile.ReturnMediaFile(@"..\..\Media.txt");       
             
             //create a new list for us to use to store our media objects to rent
             List<Media> rentedMedia = new List<Media>();
@@ -30,7 +31,7 @@ namespace Library
                 //match each needed component
                 //populae with your regex to match the format
 
-                Match match = Regex.Match(s, @"Type:\: (.*) Title\: (.*) ,Length\: (.*)");
+                Match match = Regex.Match(s, @"Type\:\s*(.*),Title\:\s*(.*),Length\:\s*(.*)");
                 if (match.Success)
                 {
                     //populate each component with the values from your capture groups
@@ -42,19 +43,39 @@ namespace Library
                     if (type.Equals("Book"))
                     {
                         //create a book object
+                        Book newBook = new Book();
                         //populate the book object with a title and length
-                        //then add the newly created book to rentedMedia
+                        newBook.Title = title;
+                        newBook.Length = length;
+                        rentedMedia.Add(newBook); 
                     }
-                    //complete for the DVD and Magazine media types
-                        //implement
+
+                    if (type.Equals("DVD"))
+                    {
+                        DVD newDVD = new DVD();
+
+                        newDVD.Title = title;
+                        newDVD.Length = length;
+                        rentedMedia.Add(newDVD);
+                    }
+
+                    if (type.Equals("Magazine"))
+                    {
+                        Magazine newMagazine = new Magazine();
+
+                        newMagazine.Title = title;
+                        newMagazine.Length = length;
+                        rentedMedia.Add(newMagazine);
+                    }
+
+                                      
                 }
             }
 
             //for each media item we have in the list print the details for each
             foreach (Media mediaItem in rentedMedia)
             {
-                //for each mediaItem call PrintMediaDetails()
-                    //implement
+                mediaItem.PrintMediaDetails();
             }
 
             //halt the program so we can read the output

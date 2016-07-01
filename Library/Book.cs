@@ -8,10 +8,16 @@ namespace Library
 {
     class Book: Media
     {
-        public override string Title { get; set; }
-        public override Length { get; set; }
-        public override int RentalLength { get; set; }
-        protected DateTime RentedDate { get; set; }
+        public override int RentalLength
+        {
+            get
+            {
+                return 21;
+            }
+            set
+            {
+            }
+        }
 
 
         public Book()
@@ -19,13 +25,22 @@ namespace Library
             RentedDate = DateTime.Today;
         }
 
-        public override void PrintMediaDetails();
-
-        public override  DateTime ReturnDueDate();
-
-        public override void SetRentedDate()
+        public override void PrintMediaDetails()
         {
-            RentedDate = DateTime.Today;
+            // print out length,rented date,rented date return date
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Book {0} ({1})", Title, Length);
+            Console.WriteLine("Rented date : {0} ", RentedDate);
+            Console.WriteLine("Due on : {0}", ReturnDueDate());
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+
+        public override DateTime ReturnDueDate()
+        {
+
+            return RentedDate.AddDays(RentalLength);
         }
     }
 }

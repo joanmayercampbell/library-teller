@@ -16,36 +16,22 @@ namespace Library
 
             try
             {
-                //check to see whether the file exists
-                if (!File.Exists(path))
-                {
-                    //throw appropriate exepction
-                        //implement
-                }
-
-                //initialize the empty string we'll be using for each line
-                string line;
-
+                
+              
                 //open a StreamReader to the file specifcied in the path variable 
-                    //implement
+                //implement
+                mediaFile =  File.ReadLines(path).ToList();                        
 
-                //while reading a new from file, addd each line to mediaFile
-                //as long as each new line is not null
-                    //implement
-
-
-                //remember to close your file
-                //file.Close();
+                
             }
             catch (FileNotFoundException)
             {
-                //write out appropriate message
-                    //implement
+                Console.WriteLine("File not found");
             }
             catch (Exception e)
             {
-                //write out the message of e
-                    //implement
+                
+                 Console.WriteLine(e);
             }
 
             return mediaFile;
