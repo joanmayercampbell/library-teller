@@ -8,7 +8,7 @@ namespace Library
 {
     class Magazine:Media
     {
-
+        // set the rental length to 3 weeks
         public override int RentalLength
         {
             get
@@ -26,6 +26,7 @@ namespace Library
             RentedDate = DateTime.Today;
         }
 
+        // print out the magazine record in blue
         public override void PrintMediaDetails()
         {
             // print out length,rented date,rented date return date
@@ -38,6 +39,7 @@ namespace Library
 
         }
 
+        // calculates the return date by adding the rental length
         public override DateTime ReturnDueDate()
         {
 

@@ -26,7 +26,7 @@ namespace Library
 
         public override void PrintMediaDetails()
         {
-            // print out length,rented date,rented date return date
+            // print out the DVD information in red
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("DVD {0} ({1})", Title, Length);

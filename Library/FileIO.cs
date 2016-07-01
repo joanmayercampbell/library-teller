@@ -18,8 +18,9 @@ namespace Library
             {
                 
               
-                //open a StreamReader to the file specifcied in the path variable 
-                //implement
+              
+                // read in all the records from the file specified in path and put it
+                // into the media list 
                 mediaFile =  File.ReadLines(path).ToList();                        
 
                 
@@ -34,6 +35,7 @@ namespace Library
                  Console.WriteLine(e);
             }
 
+            // return the pointer to the media file
             return mediaFile;
         }
 

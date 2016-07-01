@@ -25,6 +25,7 @@ namespace Library
             RentedDate = DateTime.Today;
         }
 
+        // print the book information in yellow
         public override void PrintMediaDetails()
         {
             // print out length,rented date,rented date return date
