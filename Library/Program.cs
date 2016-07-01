@@ -78,6 +78,24 @@ namespace Library
                 mediaItem.PrintMediaDetails();
             }
 
+            // output the rented list to a file
+            // get number of newMedia items
+            int numberOfItems = rentedMedia.Count;
+
+            // initialize the array according to the number of items
+            String[] allRecords = new string[numberOfItems];
+
+            // for each item in the newMedia object put the information 
+            // in the array
+            int i = 0;
+            foreach (Media eachMedia in rentedMedia)
+            {
+                allRecords[i] = rentedMedia.ToString();
+                i++;
+
+            }
+            getFile.UpdateMediaFile(allRecords);
+
             //halt the program so we can read the output
             Console.ReadKey();
         }

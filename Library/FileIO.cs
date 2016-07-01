@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class FileIO : IFileInterface
+    class FileIO:IFileInterface 
     {
         public List<string> ReturnMediaFile(string path)
         {
@@ -16,14 +16,12 @@ namespace Library
 
             try
             {
-                
-              
+                          
               
                 // read in all the records from the file specified in path and put it
                 // into the media list 
                 mediaFile =  File.ReadLines(path).ToList();                        
-
-                
+                               
             }
             catch (FileNotFoundException)
             {
@@ -39,10 +37,11 @@ namespace Library
             return mediaFile;
         }
 
-        //not yet implemented
-        public void UpdateMediaFile(List<string> newMedia)
+        // put all rented media into an output file
+        public void UpdateMediaFile(string[] newMedia)
         {
-            throw new NotImplementedException();
+            
+            File.WriteAllLines(@"RentedMedia.txt", newMedia);
         }
     }
 }

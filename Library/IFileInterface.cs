@@ -11,7 +11,7 @@ namespace Library
 
         List<String> ReturnMediaFile(string path);
 
-        void UpdateMediaFile(List<string> Media);
+        void UpdateMediaFile(string[] Media);
 
     }
 }
